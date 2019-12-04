@@ -1,0 +1,37 @@
+---
+default_domain: "net.example.com"
+
+# Where to cache data for Element API
+sync_db: /var/lib/abtools/elements-cache.sqlite3
+
+# How to communicate with BECS
+becs:
+  eapi: http://becs.net.example.com:4490/becs.wsdl
+  username: <username>
+  password: <password>
+
+
+# How to communicate with NetBox
+netbox:
+  # Base URL
+  url: https://netbox.net.exampe.com/
+
+  # from netbox /user/api-token
+  token: <token>
+
+
+  # How to communicate with Element API
+elements:
+  api:
+    url: "https://control.net.example.com/api/elements"
+
+# How to create DNS records
+sync_dns:
+  dest_record_file: /etc/dnsmgr/records_from_element_api
+  
+  ignore_models:
+    waystream: 1
+
+  ignore_platforms:
+    linux: 1
+    ibos: 1
